@@ -24,11 +24,10 @@ function getUser (id, testDb) {
 function getProfile (id, testDb) {
     var db = testDb || connection
     return db('profiles')
-    .join('users', 'profiles.user_id', '=', 'users.id')
-    .select('users.name', 'profiles.image', 'users.email', 'users.id')
-    .then(function (profiles) {
-      return profiles[0]
-    })
+      .where('profiles.user_id', id)
+      .join('users', 'profiles.user_id', '=', 'users.id')
+      .select('users.name', 'profiles.image', 'users.email', 'users.id')
+      .first()
 }
 
 // function getDataToUpdate (id, testDb) {

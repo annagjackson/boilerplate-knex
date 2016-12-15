@@ -23,21 +23,16 @@ function get (req, res) {
 }
 
 function getProfilePage (req, res) {
-  // knex('profiles')
-  // .join('users', 'profiles.user_id', '=', 'users.id')
-  //   .select('users.name', 'profiles.image', 'users.email', 'users.id')
-    db.getProfile()
-    .where('users.id', Number(req.params.id))
-    .first()
-    .then(function (userProfile){
-      var vm = {
-        name: userProfile.name,
-        email: userProfile.email,
-        image: userProfile.image,
-        id: userProfile.id
-      }
-      res.render('profile', vm)
-    })
+    db.getProfile(req.params.id)
+      .then(function (profile) {
+        var vm = {
+          name: profile.name,
+          email: profile.email,
+          image: profile.image,
+          id: profile.id
+        }
+        res.render('profile', vm)
+      })
     .catch(function (err) {
       res.status(500).send('DATABASE ERROR: ' + err.message)
     })

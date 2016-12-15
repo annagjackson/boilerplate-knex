@@ -42,7 +42,7 @@ test('getUsers gets a single user', function (t) {
     })
 })
 
-test ('getProfile returns the correct profile', function (t) {
+test('getProfile returns the correct profile', function (t) {
   var expected = {
     id: 99901,
     name: 'Ambitious Aardvark',
