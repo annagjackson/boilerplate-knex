@@ -1,0 +1,16 @@
+h1 {
+  text-align: center;
+}
+
+.picture {
+  text-align: center;
+}
+
+.button {
+  float: right;
+  clear: both;
+}
+
+li {
+  margin: 15px;
+}

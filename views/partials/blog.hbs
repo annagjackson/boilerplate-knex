@@ -1,0 +1,13 @@
+<form class="container" action="/profile/:id" method="post">
+  <h2>Write a Blogpost</h2>
+  <div class="form-group">
+    <label for="inputTitle">Title:</label>
+    <input type="text" class="form-control" id="inputTitle" aria-describedby="inputHelp" placeholder="Enter title">
+    <small id="inputHelp" class="form-text text-muted">A quick way to reference blogs</small>
+  </div>
+  <div class="form-group">
+    <label for="inputContent">Content:</label>
+    <textarea class="form-control" id="inputContent" rows="3" placeholder="Write content"></textarea>
+  </div>
+  <button type="submit" class="btn btn-primary">Create</button>
+</form>

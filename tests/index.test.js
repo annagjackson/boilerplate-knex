@@ -41,3 +41,16 @@ test('getUsers gets a single user', function (t) {
       t.is(expected, actual)
     })
 })
+
+test ('getProfile returns the correct profile', function (t) {
+  var expected = {
+    id: 99901,
+    name: 'Ambitious Aardvark',
+    email: 'aardvark@example.org',
+    image: 'http://dl0.creation.com/articles/p100/c10090/aardvark-side.jpg'
+  }
+  return db.getProfile(99901, t.context.db)
+    .then (function (actual) {
+      t.deepEqual(expected, actual)
+    })
+})

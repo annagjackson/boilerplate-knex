@@ -6,7 +6,8 @@
   <body>
     <ul>
     {{#each users}}
-      <li>{{name}} ({{email}})</li>
+      <li><a href="/profile/{{id}}">{{name}}</a> : ({{email}})
+        <a href="/profile/confirm/{{id}}"><button class="button" type="button" name="button">Delete</button></a></li>
     {{/each}}
     </ul>
   </body>

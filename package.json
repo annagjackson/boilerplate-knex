@@ -7,7 +7,7 @@
     "knex": "knex",
     "dev": "nodemon index",
     "start": "node index",
-    "debug": "node-debug index ",
+    "debug": "node-inspector & node --debug index",
     "test": "ava"
   },
   "repository": {
